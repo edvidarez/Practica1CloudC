@@ -54,7 +54,9 @@ app.get('/search/:word', function(req, res) {
                     if (err) {
                         console.log(err);
                     }
-                    imageurls.push(data[0].value);
+                    if (data != null && data.length > 0){
+                        imageurls.push(data[0].value);
+                    }
                     callback();
                  });
           }, function() {
